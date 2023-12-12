@@ -7,6 +7,7 @@ const config: Config = {
   content: [
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    // "./node_modules/next/dist/client/image-component.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -17,6 +18,9 @@ const config: Config = {
         "neutral-150": "#f1f1f1",
         // "neutral-50": '#fafafa', (native tailwind colour)
       },
+      padding: {
+        "42": "10.5rem",
+      },
       lineHeight: {
         "11": "2.75rem",
       },
@@ -24,6 +28,10 @@ const config: Config = {
         "hero-mobile": "url('/img/home/mobile/image-hero.jpg')",
         "hero-tablet": "url('/img/home/tablet/image-hero.jpg')",
         "hero-desktop": "url('/img/home/desktop/image-hero.jpg')",
+      },
+      gridTemplateColumns: {
+        "header-lg": "1fr auto 1fr",
+        header: "auto 1fr auto",
       },
     },
   },

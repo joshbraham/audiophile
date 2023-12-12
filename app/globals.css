@@ -355,3 +355,29 @@
     display: none;
   }
 }
+
+@layer components {
+  .interactive {
+    --time-ease: 150ms ease-out;
+    transition: color var(--time-ease), background-color var(--time-ease);
+  }
+
+  .interactive svg {
+    transition: fill var(--time-ease);
+  }
+
+  a.interactive:hover {
+    @apply text-primary;
+  }
+
+  .interactive:hover svg {
+    @apply fill-primary;
+  }
+
+  .interactive:focus-visible {
+    outline: 2px solid;
+    outline-offset: 2px;
+    @apply outline-primary;
+  }
+}
+

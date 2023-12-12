@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
-import Image from "next/image";
 import Link from "next/link";
+import Hamburger from "./Hamburger";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -21,25 +21,46 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${manrope.className} bg-neutral-925`}>
-        <header className="flex justify-between items-center px-6 py-8">
+        <header className="grid gap-11 grid-cols-header lg:grid-cols-header-lg px-6 py-8 md:px-10 xl:px-[165px]">
           <a
             href="#main"
-            className="absolute z-50 opacity-0 pointer-events-none focus:opacity-100 focus:pointer-events-auto"
+            className="absolute px-2 py-1 bg-primary text-white z-50 opacity-0 pointer-events-none focus:opacity-100 focus:pointer-events-auto"
           >
             Skip to main content
           </a>
-          <button aria-label="menu">
-            <svg className="w-4 h-[15px]">
-              <use href="#hamburger"></use>
-            </svg>
-          </button>
-          <Link href="/">
-            <svg className="w-[143px] h-[25px]">
-              <use href="#logo"></use>
-            </svg>
-          </Link>
-          <button aria-label="cart">
-            <svg className="w-[23px] h-5">
+          <Hamburger />
+          <svg className="w-[143px] h-[25px] justify-self-center md:justify-self-start">
+            <use href="#logo"></use>
+          </svg>
+          <nav className="hidden lg:block">
+            <ul className="flex gap-[34px] text-white font-bold text-[13px] leading-[25px] tracking-[2px]">
+              <li>
+                <Link href="/" className="interactive">
+                  HOME
+                </Link>
+              </li>
+              <li>
+                <Link href="/headphones" className="interactive">
+                  HEADPHONES
+                </Link>
+              </li>
+              <li>
+                <Link href="/speakers" className="interactive">
+                  SPEAKERS
+                </Link>
+              </li>
+              <li>
+                <Link href="/earphones" className="interactive">
+                  EARPHONES
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <button
+            aria-label="cart"
+            className="interactive md:ml-auto xl:ml-0 justify-self-end"
+          >
+            <svg className="w-[23px] h-5 fill-white">
               <use href="#cart"></use>
             </svg>
           </button>
@@ -80,6 +101,21 @@ export default function RootLayout({
           <svg width="0" height="0" className="hidden">
             <symbol
               xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 8 12"
+              width="8"
+              height="12"
+              id="arrow-right"
+            >
+              <path
+                d="M1.322 1l5 5-5 5"
+                stroke="#D87D4A"
+                stroke-width="2"
+                fill="none"
+                fill-rule="evenodd"
+              ></path>
+            </symbol>
+            <symbol
+              xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 23 20"
               width="23"
               height="20"
@@ -87,7 +123,6 @@ export default function RootLayout({
             >
               <path
                 d="M8.625 15.833c1.132 0 2.054.935 2.054 2.084 0 1.148-.922 2.083-2.054 2.083-1.132 0-2.054-.935-2.054-2.083 0-1.15.922-2.084 2.054-2.084zm9.857 0c1.132 0 2.054.935 2.054 2.084 0 1.148-.922 2.083-2.054 2.083-1.132 0-2.053-.935-2.053-2.083 0-1.15.92-2.084 2.053-2.084zm-9.857 1.39a.69.69 0 00-.685.694.69.69 0 00.685.694.69.69 0 00.685-.694.69.69 0 00-.685-.695zm9.857 0a.69.69 0 00-.684.694.69.69 0 00.684.694.69.69 0 00.685-.694.69.69 0 00-.685-.695zM4.717 0c.316 0 .59.215.658.517l.481 2.122h16.47a.68.68 0 01.538.262c.127.166.168.38.11.579l-2.695 9.236a.672.672 0 01-.648.478H7.41a.667.667 0 00-.673.66c0 .364.303.66.674.66h12.219c.372 0 .674.295.674.66 0 .364-.302.66-.674.66H7.412c-1.115 0-2.021-.889-2.021-1.98 0-.812.502-1.511 1.218-1.816L4.176 1.32H.674A.667.667 0 010 .66C0 .296.302 0 .674 0zm16.716 3.958H6.156l1.797 7.917h11.17l2.31-7.917z"
-                fill="#FFF"
                 fillRule="nonzero"
               ></path>
             </symbol>
@@ -98,7 +133,7 @@ export default function RootLayout({
               height="15"
               id="hamburger"
             >
-              <g fill="#FFF" fillRule="evenodd">
+              <g fillRule="evenodd">
                 <path d="M0 0h16v3H0zM0 6h16v3H0zM0 12h16v3H0z"></path>
               </g>
             </symbol>
