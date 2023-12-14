@@ -21,10 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${manrope.className} bg-neutral-925`}>
-        <header className="grid gap-11 grid-cols-header lg:grid-cols-header-lg px-6 py-8 md:px-10 xl:px-[165px]">
+        <header className="relative z-10 grid gap-11 grid-cols-header lg:grid-cols-header-lg px-6 py-8 md:px-10 xl:px-[165px]">
           <a
-            href="#main"
-            className="absolute px-2 py-1 bg-primary text-white z-50 opacity-0 pointer-events-none focus:opacity-100 focus:pointer-events-auto"
+            href="#maincontent"
+            className="absolute skip-link px-2 py-1 bg-primary text-white z-50 opacity-0 pointer-events-none focus:opacity-100 focus:pointer-events-auto"
           >
             Skip to main content
           </a>
@@ -65,7 +65,7 @@ export default function RootLayout({
             </svg>
           </button>
         </header>
-        <main id="main">{children}</main>
+        <main id="maincontent">{children}</main>
         <footer>
           <svg>
             <use href="#logo"></use>
@@ -109,9 +109,9 @@ export default function RootLayout({
               <path
                 d="M1.322 1l5 5-5 5"
                 stroke="#D87D4A"
-                stroke-width="2"
+                strokeWidth="2"
                 fill="none"
-                fill-rule="evenodd"
+                fillRule="evenodd"
               ></path>
             </symbol>
             <symbol

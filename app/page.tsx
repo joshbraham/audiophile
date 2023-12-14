@@ -1,4 +1,4 @@
-import Categories from "./Categories";
+import CategoryList from "./CategoryList";
 
 export default function Home() {
   return (
@@ -20,8 +20,8 @@ export default function Home() {
           SEE PRODUCT
         </button>
       </section>
-      <section className="bg-neutral-50 px-6 py-10">
-        <Categories />
+      <section className="bg-neutral-50 px-6 py-10 md:px-10 md:py-24 xl:pt-[120px] xl:pb-[168px] xl:px-[165px]">
+        <CategoryList />
       </section>
     </>
   );

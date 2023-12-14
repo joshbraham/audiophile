@@ -358,12 +358,11 @@
 
 @layer components {
   .interactive {
-    --time-ease: 150ms ease-out;
-    transition: color var(--time-ease), background-color var(--time-ease);
+    @apply transition-colors;
   }
 
   .interactive svg {
-    transition: fill var(--time-ease);
+    @apply transition-colors;
   }
 
   a.interactive:hover {
@@ -378,6 +377,10 @@
     outline: 2px solid;
     outline-offset: 2px;
     @apply outline-primary;
+  }
+
+  .skip-link {
+    grid-area: 1 / 1;
   }
 }
 

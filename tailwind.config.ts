@@ -7,7 +7,6 @@ const config: Config = {
   content: [
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    // "./node_modules/next/dist/client/image-component.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
