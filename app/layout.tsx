@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import Link from "next/link";
-import Hamburger from "./Hamburger";
+import Menu from "./Menu";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${manrope.className} bg-neutral-925`}>
+      <body className={`${manrope.className} bg-black`}>
         <header className="relative z-10 grid gap-11 grid-cols-header lg:grid-cols-header-lg px-6 py-8 md:px-10 xl:px-[165px]">
           <a
             href="#maincontent"
@@ -28,7 +28,7 @@ export default function RootLayout({
           >
             Skip to main content
           </a>
-          <Hamburger />
+          <Menu />
           <svg className="w-[143px] h-[25px] justify-self-center md:justify-self-start">
             <use href="#logo"></use>
           </svg>
@@ -99,6 +99,19 @@ export default function RootLayout({
             </a>
           </div>
           <svg width="0" height="0" className="hidden">
+            {/* <symbol
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 944 944"
+              id="pattern-circles"
+              width="944"
+              height="944"
+            >
+              <g stroke="#FFF" fill="none" fill-rule="evenodd" opacity=".202">
+                <circle cx="472" cy="472" r="235.5"></circle>
+                <circle cx="472" cy="472" r="270.5"></circle>
+                <circle cx="472" cy="472" r="471.5"></circle>
+              </g>
+            </symbol> */}
             <symbol
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 8 12"

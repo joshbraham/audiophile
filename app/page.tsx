@@ -1,3 +1,4 @@
+import Image from "next/image";
 import CategoryList from "./CategoryList";
 
 export default function Home() {
@@ -20,8 +21,92 @@ export default function Home() {
           SEE PRODUCT
         </button>
       </section>
-      <section className="bg-neutral-50 px-6 py-10 md:px-10 md:py-24 xl:pt-[120px] xl:pb-[168px] xl:px-[165px]">
+      <section
+        aria-label="Product categories"
+        className="bg-neutral-50 px-6 py-10 md:px-10 md:py-24 xl:pt-[120px] xl:pb-[168px] xl:px-[165px]"
+      >
         <CategoryList />
+      </section>
+      <section
+        aria-label="Featured products"
+        className="bg-neutral-50 px-6 md:px-10 xl:px-[165px] py-20 flex flex-col gap-6 md:gap-8 xl:gap-12"
+      >
+        <article
+          aria-labelledby="feature-1"
+          className="overflow-hidden flex flex-col lg:flex-row lg:justify-evenly rounded-lg pt-16 px-6 pb-[55px] md:pb-16 lg:px-0 lg:pb-8 xl:pt-[133px] xl:pb-0 bg-pattern-circles bg-primary bg-no-repeat bg-[center_-119px] md:bg-[center_-315px] bg-[length:558px_558px] md:bg-[length:944px_944px]"
+        >
+          <div className="mb-[38px] lg:mb-0">
+            <Image
+              src="/img/home/desktop/image-speaker-zx9.png"
+              alt="A black speaker with a large white top cone and a medium black bottom cone"
+              width={756}
+              height={918}
+              className="mx-auto h-auto w-40 md:w-[184px] lg:w-72 xl:w-[380px] relative lg:top-10"
+            />
+          </div>
+          <div className="text-white text-center lg:text-start flex flex-col items-center lg:items-start xl:justify-center">
+            <h2
+              id="feature-1"
+              className="max-w-[8ch] font-bold text-4xl md:text-[56px] leading-10 md:leading-[58px] tracking-[1.29px] md:tracking-[2px] mb-6"
+            >
+              ZX9 SPEAKER
+            </h2>
+            <p className="max-w-[35ch] opacity-75 font-medium text-[15px] leading-[25px] mb-6 md:mb-10">
+              Upgrade to premium speakers that are phenomenally built to deliver
+              truly remarkable sound.
+            </p>
+            <a
+              href="#"
+              className="px-8 py-4 bg-black font-bold text-[13px] tracking-[1px] transition-colors hover:bg-neutral-600"
+            >
+              SEE PRODUCT
+            </a>
+          </div>
+        </article>
+        <article aria-labelledby="feature-2" className="rounded-lg">
+          <picture>
+            <source
+              srcSet="/img/home/desktop/image-speaker-zx7.jpg"
+              media="(min-width: 1024px)"
+            />
+            <source
+              srcSet="/img/home/tablet/image-speaker-zx7.jpg"
+              media="(min-width: 768px)"
+            />
+            <Image
+              src="/img/home/mobile/image-speaker-zx7.jpg"
+              alt="A black speaker with a small black top cone and a large black bottom cone"
+              width={654}
+              height={640}
+            />
+          </picture>
+          <div className="absolute">
+            <h2 id="feature-2">ZX7 SPEAKER</h2>
+            <a href="#">SEE PRODUCT</a>
+          </div>
+        </article>
+        <article aria-labelledby="feature-3">
+          <picture>
+            <source
+              srcSet="/img/home/desktop/image-earphones-yx1.jpg"
+              media="(min-width: 1024px)"
+            />
+            <source
+              srcSet="/img/home/tablet/image-earphones-yx1.jpg"
+              media="(min-width: 768px)"
+            />
+            <Image
+              src="/img/home/mobile/image-earphones-yx1.jpg"
+              alt="A plugged-in charging case with truly wireless earbuds inside, all black"
+              width={654}
+              height={400}
+            />
+          </picture>
+          <div className="rounded-lg bg-neutral-400">
+            <h2 id="feature-3">YX1 EARPHONES</h2>
+            <a href="#">SEE PRODUCT</a>
+          </div>
+        </article>
       </section>
     </>
   );

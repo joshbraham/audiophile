@@ -8,7 +8,7 @@ type OrNull<T> = T | null | undefined;
 // I opted with querySelector instead of React.useRef, as I would need multiple refs
 // but forwardRef only accepts 1, so CategoryList was left as a standard component.
 
-export default function Hamburger() {
+export default function Menu() {
   const menuRef = useRef<HTMLMenuElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -73,7 +73,7 @@ export default function Hamburger() {
         onKeyDown={escapeMenuOnTab.bind(null, false)}
         hidden
       >
-        <CategoryList className="bg-white pt-8 pb-9 px-6 rounded-b-lg" />
+        <CategoryList className="bg-white pt-8 pb-9 px-6 md:pt-14 md:pb-[67px] md:px-10 rounded-b-lg" />
       </menu>
     </>
   );
