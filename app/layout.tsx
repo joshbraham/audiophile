@@ -24,7 +24,7 @@ export default function RootLayout({
         <header className="relative z-10 grid gap-11 grid-cols-header lg:grid-cols-header-lg px-6 py-8 md:px-10 xl:px-[165px]">
           <a
             href="#maincontent"
-            className="absolute skip-link px-2 py-1 bg-primary text-white z-50 opacity-0 pointer-events-none focus:opacity-100 focus:pointer-events-auto"
+            className="absolute first-cell px-2 py-1 bg-primary text-white z-50 opacity-0 pointer-events-none focus:opacity-100 focus:pointer-events-auto"
           >
             Skip to main content
           </a>
@@ -99,9 +99,8 @@ export default function RootLayout({
             </a>
           </div>
           <svg width="0" height="0" className="hidden">
-            {/* <symbol
+            <symbol
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 944 944"
               id="pattern-circles"
               width="944"
               height="944"
@@ -111,7 +110,7 @@ export default function RootLayout({
                 <circle cx="472" cy="472" r="270.5"></circle>
                 <circle cx="472" cy="472" r="471.5"></circle>
               </g>
-            </symbol> */}
+            </symbol>
             <symbol
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 8 12"

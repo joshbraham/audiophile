@@ -33,18 +33,25 @@ export default function Home() {
       >
         <article
           aria-labelledby="feature-1"
-          className="overflow-hidden flex flex-col lg:flex-row lg:justify-evenly rounded-lg pt-16 px-6 pb-[55px] md:pb-16 lg:px-0 lg:pb-8 xl:pt-[133px] xl:pb-0 bg-pattern-circles bg-primary bg-no-repeat bg-[center_-119px] md:bg-[center_-315px] bg-[length:558px_558px] md:bg-[length:944px_944px]"
+          className="overflow-hidden isolate bg-primary rounded-lg px-6 pt-[60px] pb-[55px] md:px-0 md:py-16 lg:py-12 flex flex-col lg:flex-row lg:justify-evenly"
         >
-          <div className="mb-[38px] lg:mb-0">
+          <div className="relative mb-9 md:mb-[72px] lg:mb-0 lg:top-[56px] xl:top-[62px]">
+            <Image
+              src="/svg/pattern-circles.svg"
+              alt=""
+              width={944}
+              height={944}
+              className="absolute -z-10 max-w-none w-[558px] md:w-[944px] left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2 md:top-[126px] lg:top-[312px]"
+            />
             <Image
               src="/img/home/desktop/image-speaker-zx9.png"
               alt="A black speaker with a large white top cone and a medium black bottom cone"
               width={756}
               height={918}
-              className="mx-auto h-auto w-40 md:w-[184px] lg:w-72 xl:w-[380px] relative lg:top-10"
+              className="mx-auto w-40 md:w-[184px] lg:w-72 xl:w-[380px]"
             />
           </div>
-          <div className="text-white text-center lg:text-start flex flex-col items-center lg:items-start xl:justify-center">
+          <div className="text-white text-center lg:text-start flex flex-col items-center lg:items-start lg:justify-center">
             <h2
               id="feature-1"
               className="max-w-[8ch] font-bold text-4xl md:text-[56px] leading-10 md:leading-[58px] tracking-[1.29px] md:tracking-[2px] mb-6"

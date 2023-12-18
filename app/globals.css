@@ -378,9 +378,10 @@
     outline-offset: 2px;
     @apply outline-primary;
   }
+}
 
-  .skip-link {
+@layer utilities {
+  .first-cell {
     grid-area: 1 / 1;
   }
 }
-
