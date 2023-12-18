@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from 'next/link';
 import CategoryList from "./CategoryList";
 
 export default function Home() {
@@ -17,9 +18,9 @@ export default function Home() {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
-        <button className="interactive bg-primary px-8 py-4 text-white font-bold text-[13px] tracking-[1px] hover:bg-primary-light">
+        <Link href="#" className="interactive bg-primary px-8 py-4 text-white font-bold text-[13px] tracking-[1px] transition-colors hover:bg-primary-light">
           SEE PRODUCT
-        </button>
+        </Link>
       </section>
       <section
         aria-label="Product categories"
@@ -64,13 +65,13 @@ export default function Home() {
             </p>
             <a
               href="#"
-              className="px-8 py-4 bg-black font-bold text-[13px] tracking-[1px] transition-colors hover:bg-neutral-600"
+              className="interactive px-8 py-4 bg-black font-bold text-[13px] tracking-[1px] transition-colors hover:bg-neutral-600"
             >
               SEE PRODUCT
             </a>
           </div>
         </article>
-        <article aria-labelledby="feature-2" className="rounded-lg">
+        <article aria-labelledby="feature-2" className="relative">
           <picture>
             <source
               srcSet="/img/home/desktop/image-speaker-zx7.jpg"
@@ -85,14 +86,25 @@ export default function Home() {
               alt="A black speaker with a small black top cone and a large black bottom cone"
               width={654}
               height={640}
+              className="rounded-lg w-full"
             />
           </picture>
-          <div className="absolute">
-            <h2 id="feature-2">ZX7 SPEAKER</h2>
-            <a href="#">SEE PRODUCT</a>
+          <div className="absolute top-0 h-full pl-6 sm:pl-[55px] md:pl-16 lg:pl-24 flex flex-col gap-8 justify-center">
+            <h2 id="feature-2" className="font-bold text-[28px] tracking-[2px]">
+              ZX7 SPEAKER
+            </h2>
+            <a
+              href="#"
+              className="interactive w-fit font-bold text-[13px] tracking-[1px] px-8 py-4 border border-black transition-colors hover:bg-black hover:text-white"
+            >
+              SEE PRODUCT
+            </a>
           </div>
         </article>
-        <article aria-labelledby="feature-3">
+        <article
+          aria-labelledby="feature-3"
+          className="grid grid-rows-2 md:grid-rows-none md:grid-cols-2 gap-6 md:gap-[11px] lg:gap-[30px]"
+        >
           <picture>
             <source
               srcSet="/img/home/desktop/image-earphones-yx1.jpg"
@@ -107,13 +119,54 @@ export default function Home() {
               alt="A plugged-in charging case with truly wireless earbuds inside, all black"
               width={654}
               height={400}
+              className="w-full rounded-lg"
             />
           </picture>
-          <div className="rounded-lg bg-neutral-400">
-            <h2 id="feature-3">YX1 EARPHONES</h2>
-            <a href="#">SEE PRODUCT</a>
+          <div className="rounded-lg bg-neutral-150 flex flex-col justify-center gap-8 pl-6 sm:pl-[55px] py-10 md:py-0">
+            <h2 id="feature-3" className="font-bold text-[28px] tracking-[2px]">
+              YX1 EARPHONES
+            </h2>
+            <a
+              href="#"
+              className="interactive w-fit font-bold text-[13px] tracking-[1px] px-8 py-4 border border-black transition-colors hover:bg-black hover:text-white"
+            >
+              SEE PRODUCT
+            </a>
           </div>
         </article>
+      </section>
+      <section className="bg-neutral-50 flex flex-col lg:flex-row-reverse gap-10 md:gap-16 lg:gap-0 pt-10 md:pt-4 lg:pt-[120px] pb-[120px] md:pb-24 lg:pb-[200px] px-6 md:px-10 xl:px-[165px]">
+        <picture className="lg:flex-1">
+          <source
+            srcSet="/img/shared/desktop/image-best-gear.jpg"
+            media="(min-width: 1024px)"
+          />
+          <source
+            srcSet="/img/shared/tablet/image-best-gear.jpg"
+            media="(min-width: 768px)"
+          />
+          <Image
+            src="/img/shared/mobile/image-best-gear.jpg"
+            alt=""
+            width={654}
+            height={600}
+            className="rounded-lg w-full"
+          />
+        </picture>
+        <div className="text-center lg:text-start sm:px-[58px] lg:pl-0 lg:pr-[55px] xl:pr-[125px] lg:flex-1 lg:flex lg:flex-col lg:justify-center">
+          <h2 className="uppercase font-bold text-[28px] md:text-[40px] leading-[38px] md:leading-[44px] tracking-[1px] md:tracking-[1.43px] mb-8">
+            Bringing you the <span className="text-primary">best</span> audio
+            gear
+          </h2>
+          <p className="font-medium text-[15px] leading-[25px] opacity-50">
+            Located at the heart of New York City, Audiophile is the premier
+            store for high end headphones, earphones, speakers, and audio
+            accessories. We have a large showroom and luxury demonstration rooms
+            available for you to browse and experience a wide range of our
+            products. Stop by our store to meet some of the fantastic people who
+            make Audiophile the best place to buy your portable audio equipment.
+          </p>
+        </div>
       </section>
     </>
   );

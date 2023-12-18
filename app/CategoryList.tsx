@@ -1,13 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { forwardRef } from "react";
 
 const categoryData = [
   {
     src: "/img/category/headphones.png",
     maxWidth: 123,
     maxHeight: 160,
-    class: "w-20 h-auto lg:w-[123px] mb-9",
+    class: "w-20 lg:w-[123px] mb-9",
     title: "HEADPHONES",
     href: "/headphones",
   },
@@ -15,7 +14,7 @@ const categoryData = [
     src: "/img/category/speakers.png",
     maxWidth: 121,
     maxHeight: 146,
-    class: "w-[84px] h-auto lg:w-[121px] mb-[39px]",
+    class: "w-[84px] lg:w-[121px] mb-[39px]",
     title: "SPEAKERS",
     href: "/speakers",
   },
@@ -23,7 +22,7 @@ const categoryData = [
     src: "/img/category/earphones.png",
     maxWidth: 125,
     maxHeight: 126,
-    class: "w-[103px] h-auto lg:w-[125px] mb-9 lg:mt-3",
+    class: "w-[103px] lg:w-[125px] mb-9 lg:mt-3",
     title: "EARPHONES",
     href: "/earphones",
   },
@@ -34,7 +33,7 @@ export default function CategoryList({ className }: { className?: string }) {
     <ul
       className={`${
         className ?? ""
-      } list-none flex flex-col gap-4 md:flex-row md:gap-[10px] xl:gap-[30px]`}
+      } list-none flex flex-col gap-4 sm:flex-row sm:gap-[10px] xl:gap-[30px]`}
     >
       {categoryData.map((data) => (
         <li

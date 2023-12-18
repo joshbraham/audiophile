@@ -27,7 +27,6 @@ const config: Config = {
         "hero-mobile": "url('/img/home/mobile/image-hero.jpg')",
         "hero-tablet": "url('/img/home/tablet/image-hero.jpg')",
         "hero-desktop": "url('/img/home/desktop/image-hero.jpg')",
-        "pattern-circles": "url('/svg/pattern-circles.svg')",
       },
       gridTemplateColumns: {
         "header-lg": "1fr auto 1fr",

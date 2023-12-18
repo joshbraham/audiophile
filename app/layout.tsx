@@ -34,66 +34,94 @@ export default function RootLayout({
           </svg>
           <nav className="hidden lg:block">
             <ul className="flex gap-[34px] text-white font-bold text-[13px] leading-[25px] tracking-[2px]">
-              <li>
-                <Link href="/" className="interactive">
-                  HOME
-                </Link>
-              </li>
-              <li>
-                <Link href="/headphones" className="interactive">
-                  HEADPHONES
-                </Link>
-              </li>
-              <li>
-                <Link href="/speakers" className="interactive">
-                  SPEAKERS
-                </Link>
-              </li>
-              <li>
-                <Link href="/earphones" className="interactive">
-                  EARPHONES
-                </Link>
-              </li>
+              {["home", "headphones", "speakers", "earphones"].map(
+                (pageName) => (
+                  <li key={pageName}>
+                    <Link
+                      href={pageName === "home" ? "/" : `/${pageName}`}
+                      className="interactive transition-colors hover:text-primary"
+                    >
+                      {pageName.toUpperCase()}
+                    </Link>
+                  </li>
+                )
+              )}
             </ul>
           </nav>
           <button
             aria-label="cart"
-            className="interactive md:ml-auto xl:ml-0 justify-self-end"
+            className="interactive group md:ml-auto xl:ml-0 justify-self-end"
           >
-            <svg className="w-[23px] h-5 fill-white">
+            <svg className="w-[23px] h-5 fill-white transition-colors group-hover:fill-primary">
               <use href="#cart"></use>
             </svg>
           </button>
         </header>
         <main id="maincontent">{children}</main>
-        <footer>
-          <svg>
+        <footer className="text-white bg-neutral-925 px-6 md:px-10 xl:px-[165px] pt-[52px] md:pt-[60px] xl:pt-[75px] pb-[38px] md:pb-[46px] xl:pb-12 space-y-12 md:space-y-0 relative before:absolute before:bg-primary before:w-[101px] before:h-1 before:top-0 before:left-1/2 md:before:left-10 xl:before:left-[165px] before:-translate-x-1/2 md:before:translate-x-0 md:grid md:grid-cols-[1fr_auto] md:gap-y-8">
+          <svg width="143" height="25" className="mx-auto md:m-0">
             <use href="#logo"></use>
           </svg>
-          <Link href="/">HOME</Link>
-          <Link href="/headphones">HEADPHONES</Link>
-          <Link href="/speakers">SPEAKERS</Link>
-          <Link href="/earphones">EARPHONES</Link>
-          <p>
+          <div className="font-bold text-[13px] leading-[25px] tracking-[2px] flex flex-col md:flex-row gap-4 md:gap-[34px] items-center md:col-span-2 lg:col-span-1">
+            <Link
+              href="/"
+              className="interactive transition-colors hover:text-primary"
+            >
+              HOME
+            </Link>
+            <Link
+              href="/headphones"
+              className="interactive transition-colors hover:text-primary"
+            >
+              HEADPHONES
+            </Link>
+            <Link
+              href="/speakers"
+              className="interactive transition-colors hover:text-primary"
+            >
+              SPEAKERS
+            </Link>
+            <Link
+              href="/earphones"
+              className="interactive transition-colors hover:text-primary"
+            >
+              EARPHONES
+            </Link>
+          </div>
+          <p className="max-w-prose md:max-w-none mx-auto md:m-0 text-center md:text-left opacity-50 font-medium text-[15px] leading-[25px] md:col-span-2 lg:col-span-1">
             Audiophile is an all in one stop to fulfill your audio needs.
             We&apos;re a small team of music lovers and sound specialists who
             are devoted to helping you get the most out of personal audio. Come
             and visit our demo facility - we&apos;re open 7 days a week.
           </p>
-          <p>Copyright 2021. All Rights Reserved</p>
-          <div className="flex">
-            <a href="#" aria-label="Facebook page">
-              <svg className="fill-white hover:fill-primary">
+          <p className="text-center md:text-left opacity-50 font-bold text-[15px] leading-[25px] md:col-start-1 md:pt-12 lg:pt-6">
+            Copyright 2021. All Rights Reserved
+          </p>
+          <div className="flex justify-center md:justify-end items-center md:items-end gap-4 lg:row-start-2 lg:col-start-2">
+            <a href="#" aria-label="Facebook page" className="interactive">
+              <svg
+                width="24"
+                height="24"
+                className="fill-white transition-colors hover:fill-primary"
+              >
                 <use href="#facebook-logo"></use>
               </svg>
             </a>
-            <a href="#" aria-label="Twitter page">
-              <svg className="fill-white hover:fill-primary">
+            <a href="#" aria-label="Twitter page" className="interactive">
+              <svg
+                width="24"
+                height="20"
+                className="fill-white transition-colors hover:fill-primary"
+              >
                 <use href="#twitter-logo"></use>
               </svg>
             </a>
-            <a href="#" aria-label="Instagram page">
-              <svg className="fill-white hover:fill-primary">
+            <a href="#" aria-label="Instagram page" className="interactive">
+              <svg
+                width="24"
+                height="24"
+                className="fill-white transition-colors hover:fill-primary"
+              >
                 <use href="#instagram-logo"></use>
               </svg>
             </a>

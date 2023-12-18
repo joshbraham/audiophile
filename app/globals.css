@@ -357,22 +357,6 @@
 }
 
 @layer components {
-  .interactive {
-    @apply transition-colors;
-  }
-
-  .interactive svg {
-    @apply transition-colors;
-  }
-
-  a.interactive:hover {
-    @apply text-primary;
-  }
-
-  .interactive:hover svg {
-    @apply fill-primary;
-  }
-
   .interactive:focus-visible {
     outline: 2px solid;
     outline-offset: 2px;
@@ -385,3 +369,4 @@
     grid-area: 1 / 1;
   }
 }
+

@@ -57,11 +57,11 @@ export default function Menu() {
         ref={buttonRef}
         aria-label="menu"
         aria-haspopup="menu"
-        className="interactive lg:hidden"
+        className="interactive group lg:hidden"
         onClick={toggleMenu}
         onKeyDown={escapeMenuOnTab.bind(null, true)}
       >
-        <svg className="w-4 h-[15px] fill-white">
+        <svg className="w-4 h-[15px] fill-white transition-colors group-hover:fill-primary">
           <use href="#hamburger"></use>
         </svg>
       </button>
