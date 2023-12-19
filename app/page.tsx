@@ -1,10 +1,11 @@
+import AboutSection from "@/components/AboutSection";
 import Image from "next/image";
-import Link from 'next/link';
+import Link from "next/link";
 import CategoryList from "./CategoryList";
 
 export default function Home() {
   return (
-    <>
+    <main id="maincontent">
       <hr className="border-neutral-700 md:mx-10 xl:mx-[165px]" />
       <section className="flex flex-col items-center lg:items-start text-center lg:text-start px-6 py-28 md:px-48 md:pt-32 md:pb-42 lg:px-10 xl:px-[165px] xl:pb-[158px] relative before:absolute before:inset-[-5.5625rem_0_0] before:-z-50 before:bg-no-repeat before:bg-cover before:bg-[center] before:bg-hero-mobile md:before:bg-hero-tablet lg:before:bg-hero-desktop">
         <h2 className="text-neutral-500 text-[14px] tracking-[10px] mb-4 md:mb-6">
@@ -18,7 +19,10 @@ export default function Home() {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
-        <Link href="#" className="interactive bg-primary px-8 py-4 text-white font-bold text-[13px] tracking-[1px] transition-colors hover:bg-primary-light">
+        <Link
+          href="#"
+          className="focus-outline-primary bg-primary px-8 py-4 text-white font-bold text-[13px] tracking-[1px] transition-colors hover:bg-primary-light"
+        >
           SEE PRODUCT
         </Link>
       </section>
@@ -65,7 +69,7 @@ export default function Home() {
             </p>
             <a
               href="#"
-              className="interactive px-8 py-4 bg-black font-bold text-[13px] tracking-[1px] transition-colors hover:bg-neutral-600"
+              className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black px-8 py-4 bg-black font-bold text-[13px] tracking-[1px] transition-colors hover:bg-neutral-600"
             >
               SEE PRODUCT
             </a>
@@ -95,7 +99,7 @@ export default function Home() {
             </h2>
             <a
               href="#"
-              className="interactive w-fit font-bold text-[13px] tracking-[1px] px-8 py-4 border border-black transition-colors hover:bg-black hover:text-white"
+              className="focus-outline-primary w-fit font-bold text-[13px] tracking-[1px] px-8 py-4 border border-black transition-colors hover:bg-black hover:text-white"
             >
               SEE PRODUCT
             </a>
@@ -128,47 +132,15 @@ export default function Home() {
             </h2>
             <a
               href="#"
-              className="interactive w-fit font-bold text-[13px] tracking-[1px] px-8 py-4 border border-black transition-colors hover:bg-black hover:text-white"
+              className="focus-outline-primary w-fit font-bold text-[13px] tracking-[1px] px-8 py-4 border border-black transition-colors hover:bg-black hover:text-white"
             >
               SEE PRODUCT
             </a>
           </div>
         </article>
       </section>
-      <section className="bg-neutral-50 flex flex-col lg:flex-row-reverse gap-10 md:gap-16 lg:gap-0 pt-10 md:pt-4 lg:pt-[120px] pb-[120px] md:pb-24 lg:pb-[200px] px-6 md:px-10 xl:px-[165px]">
-        <picture className="lg:flex-1">
-          <source
-            srcSet="/img/shared/desktop/image-best-gear.jpg"
-            media="(min-width: 1024px)"
-          />
-          <source
-            srcSet="/img/shared/tablet/image-best-gear.jpg"
-            media="(min-width: 768px)"
-          />
-          <Image
-            src="/img/shared/mobile/image-best-gear.jpg"
-            alt=""
-            width={654}
-            height={600}
-            className="rounded-lg w-full"
-          />
-        </picture>
-        <div className="text-center lg:text-start sm:px-[58px] lg:pl-0 lg:pr-[55px] xl:pr-[125px] lg:flex-1 lg:flex lg:flex-col lg:justify-center">
-          <h2 className="uppercase font-bold text-[28px] md:text-[40px] leading-[38px] md:leading-[44px] tracking-[1px] md:tracking-[1.43px] mb-8">
-            Bringing you the <span className="text-primary">best</span> audio
-            gear
-          </h2>
-          <p className="font-medium text-[15px] leading-[25px] opacity-50">
-            Located at the heart of New York City, Audiophile is the premier
-            store for high end headphones, earphones, speakers, and audio
-            accessories. We have a large showroom and luxury demonstration rooms
-            available for you to browse and experience a wide range of our
-            products. Stop by our store to meet some of the fantastic people who
-            make Audiophile the best place to buy your portable audio equipment.
-          </p>
-        </div>
-      </section>
-    </>
+      <AboutSection />
+    </main>
   );
 }
 

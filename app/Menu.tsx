@@ -1,80 +1,48 @@
 "use client";
 
-import React, { useCallback, useRef } from "react";
+import { useRef } from "react";
 import CategoryList from "./CategoryList";
 
-type OrNull<T> = T | null | undefined;
-
-// I opted with querySelector instead of React.useRef, as I would need multiple refs
-// but forwardRef only accepts 1, so CategoryList was left as a standard component.
-
-export default function Menu() {
-  const menuRef = useRef<HTMLMenuElement>(null);
+export default function Header() {
+  const navDivRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  const firstAnchor: OrNull<HTMLAnchorElement> =
-    menuRef.current?.querySelector("a");
-  const lastAnchor: OrNull<HTMLAnchorElement> =
-    menuRef.current?.querySelector("li:last-child > a");
+  const toggleNav = () => {
+    const btn = buttonRef.current;
+    const nav = navDivRef.current;
 
-  function closeMenu() {
-    menuRef.current?.toggleAttribute("hidden", true);
-    buttonRef.current?.removeAttribute("aria-expanded");
-  }
-
-  function escapeMenuOnTab(shift: boolean, e: React.KeyboardEvent) {
-    if (
-      e.key === "Tab" &&
-      e.shiftKey === shift &&
-      (shift === true || document.activeElement === lastAnchor)
-    ) {
-      closeMenu();
-    }
-  }
-
-  function escapeMenu(e: React.MouseEvent<HTMLMenuElement>) {
-    if (e.target === e.currentTarget) {
-      closeMenu();
-    }
-  }
-
-  function toggleMenu() {
-    const menu = menuRef.current;
-    const button = buttonRef.current;
-
-    menu?.toggleAttribute("hidden");
-    if (menu?.hidden) {
-      button?.removeAttribute("aria-expanded");
+    if (btn?.getAttribute("aria-expanded") === "false") {
+      nav?.removeAttribute("hidden");
+      btn.setAttribute("aria-expanded", "true");
     } else {
-      firstAnchor?.focus();
-      button?.setAttribute("aria-expanded", "true");
+      nav?.toggleAttribute("hidden", true);
+      btn?.setAttribute("aria-expanded", "false");
     }
-  }
+  };
 
   return (
-    <>
+    <nav className="lg:hidden">
       <button
         ref={buttonRef}
         aria-label="menu"
-        aria-haspopup="menu"
-        className="interactive group lg:hidden"
-        onClick={toggleMenu}
-        onKeyDown={escapeMenuOnTab.bind(null, true)}
+        aria-expanded="false"
+        className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[13px] focus-visible:outline-primary group"
+        onClick={toggleNav}
       >
-        <svg className="w-4 h-[15px] fill-white transition-colors group-hover:fill-primary">
+        <svg
+          aria-hidden="true"
+          className="w-4 h-[15px] fill-white transition-colors group-hover:fill-primary"
+        >
           <use href="#hamburger"></use>
         </svg>
       </button>
-      <menu
-        role="menu"
-        ref={menuRef}
-        className="bg-transparent absolute w-full top-full after:bg-black after:bg-opacity-40 after:fixed after:inset-0 after:-z-10"
-        onClick={escapeMenu}
-        onKeyDown={escapeMenuOnTab.bind(null, false)}
+      <div
+        ref={navDivRef}
+        className="bg-transparent absolute w-full top-full left-0 after:bg-black after:bg-opacity-40 after:fixed after:inset-0 after:-z-10"
         hidden
       >
         <CategoryList className="bg-white pt-8 pb-9 px-6 md:pt-14 md:pb-[67px] md:px-10 rounded-b-lg" />
-      </menu>
-    </>
+      </div>
+    </nav>
   );
 }

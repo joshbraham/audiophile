@@ -38,11 +38,11 @@ export default function CategoryList({ className }: { className?: string }) {
       {categoryData.map((data) => (
         <li
           key={data.title}
-          className="flex-1 isolate relative before:absolute before:-z-10 before:inset-[52px_0_0] before:bg-neutral-150 before:rounded-lg"
+          className="flex-1 flex justify-center items-end isolate relative before:absolute before:-z-10 before:inset-[52px_0_0] before:bg-neutral-150 before:rounded-lg"
         >
           <Link
             href={data.href}
-            className="group focus-visible:outline-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline pb-6 flex flex-col items-center"
+            className="group w-full focus-visible:outline-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline pb-6 flex flex-col items-center"
           >
             <div
               className={`${data.class} relative after:absolute after:bottom-0 after:w-[95px] after:h-[14px] after:bg-black after:blur-[22px]`}
