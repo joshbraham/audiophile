@@ -1,7 +1,7 @@
+import Menu from "@/components/Menu";
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import Link from "next/link";
-import Menu from "./Menu";
 import "./globals.css";
 
 const manrope = Manrope({

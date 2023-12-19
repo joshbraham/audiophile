@@ -1,7 +1,7 @@
 import AboutSection from "@/components/AboutSection";
+import CategoryList from "@/components/CategoryList";
 import Image from "next/image";
 import Link from "next/link";
-import CategoryList from "./CategoryList";
 
 export default function Home() {
   return (
