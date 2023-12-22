@@ -19,7 +19,7 @@
 # misc
 .DS_Store
 *.pem
-fem-files/
+.fem-files/
 .prettierignore
 
 # debug
@@ -27,8 +27,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local env files
-.env*.local
+# env files
+.env*
 
 # vercel
 .vercel
